@@ -4,12 +4,18 @@ inspired by qqwweee/keras-yolo3  https://github.com/qqwweee/keras-yolo3
 
 Quick Start
 Download YOLOv3 weights from YOLO website.
+YoloV3 https://pjreddie.com/media/files/yolov3.weights
+
+or
+
+YoloV3-tiny https://pjreddie.com/media/files/yolov3-tiny.weights
+
 Convert the Darknet YOLO model to a Keras model.
+python convert.py yolov3.cfg yolov3.weights model_data/yolo.h5
+
 Run YOLO detection.
 wget https://pjreddie.com/media/files/yolov3.weights
-python convert.py yolov3.cfg yolov3.weights model_data/yolo.h5
-python yolo_video.py [OPTIONS...] --image, for image detection mode, OR
-python yolo_video.py [video_path] [output_path (optional)]
-For Tiny YOLOv3, just do in a similar way, just specify model path and anchor path with --model model_file and --anchors anchor_file.
 
 Usage
+
+python yolo_video.py --input test.mp4 --output out.mp4
